@@ -19,7 +19,7 @@ public class EditorActivity extends AppCompatActivity {
     /** EditText field to enter the pet's name */
     private EditText mNameEditText;
 
-    /** EditText field to enter the pet's breed */
+    /** EditText field to enter the pet's sleep */
     private EditText mSleepEditText;
 
     /** EditText field to enter the pet's weight */
@@ -29,8 +29,8 @@ public class EditorActivity extends AppCompatActivity {
     private Spinner mGenderSpinner;
 
     /**
-     * Gender of the pet. The possible values are:
-     * 0 for unknown gender, 1 for male, 2 for female.
+     * Gender of the user. The possible values are:
+     * 0 for other gender, 1 for male, 2 for female.
      */
     private int mGender = 0;
 
@@ -41,7 +41,7 @@ public class EditorActivity extends AppCompatActivity {
     }
 
     /**
-     * Get user input from editor and save new pet into database
+     * Get user input from editor and save new tracker into database
      */
 
     private void insertTracker(){
