@@ -32,16 +32,9 @@ public class CatalogActivity extends AppCompatActivity {
      * Temporary helper method to display information in the onscreen TextView about the state of
      * the tracker database.
      */
-    private void displayDatabaseInfo() {
-        // To access our database, we instantiate our subclass of SQLiteOpenHelper
-        // and pass the context, which is the current activity.
+    private Cursor displayDatabaseInfo() {
         TrackerDbHelper mDbHelper = new TrackerDbHelper(this);
-
-        // Create and/or open a database to read from it
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-
-        // Perform this raw SQL query "SELECT * FROM pets"
-        // to get a Cursor that contains all rows from the pets table.
 
         String[] projection = {
                 TrackerEntry._ID,
@@ -60,6 +53,8 @@ public class CatalogActivity extends AppCompatActivity {
                 null,
                 null
         );
+
+        return cursor;
     }
 
     private void insertTracker(){
